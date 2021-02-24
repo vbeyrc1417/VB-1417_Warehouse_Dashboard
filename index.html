@@ -44,6 +44,12 @@
                 <th>Priority</th>
                 <th>Quantity</th>
                 <th>City</th>
+                <th>Order Dispatched</th>
+                <th>Order Shipped</th>
+                <th>Order Time</th>
+                <th>Dispatch Time</th>
+                <th>Shipping Time</th>
+                <th>Time Taken</th>
             </tr>
             <tbody id="tableContent">
             </tbody>
@@ -102,7 +108,7 @@ var redIcon = new L.Icon({
         refreshChart();
     
         // Fetch every 1 second
-        setInterval(refreshTable, 1000);
+        setInterval(refreshTable, 3000);
         setInterval(refreshMap,3000);
         setInterval(refreshChart,3000);
     });
@@ -130,6 +136,12 @@ var redIcon = new L.Icon({
                         	  '</td><td>' + data.feed.entry[i].gsx$priority.$t + 
                         	  '</td><td>' + data.feed.entry[i].gsx$quantity.$t + 
                         	  '</td><td>'  + data.feed.entry[i].gsx$city.$t + 
+                            '</td><td>'  + data.feed.entry[i].gsx$orderdispatched.$t +
+                            '</td><td>'  + data.feed.entry[i].gsx$ordershipped.$t +
+                            '</td><td>'  + data.feed.entry[i].gsx$ordertime.$t +
+                            '</td><td>'  + data.feed.entry[i].gsx$dispatchtime.$t +
+                            '</td><td>'  + data.feed.entry[i].gsx$shippingtime.$t +
+                            '</td><td>'  + data.feed.entry[i].gsx$timetaken.$t +
                         	  '</td></tr>';
 
                 }
